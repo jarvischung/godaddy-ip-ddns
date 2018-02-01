@@ -16,4 +16,4 @@ ENV SECRET qwerty
 
 RUN chmod 555 godaddyddns.sh
 
-CMD while /bin/true; do ./godaddyddns.sh; /bin/sleep 300; done
+CMD ./godaddyddns.sh

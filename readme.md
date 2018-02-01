@@ -51,7 +51,7 @@ In this example, the key is `dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5` and the secret
             ```
 3. Launching the Docker container from the image (replace the values below):
     ```bash
-    sudo docker run -d --name=godaddyddns --restart=always -e 'DOMAIN=mydomain.com' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'NAME=@' godaddy-ip-ddns
+    sudo docker run -d --name=godaddyddns --restart=always -e 'DOMAIN=mydomain.com' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'NAME=@' -e 'DELAY=1200' godaddy-ip-ddns
     ```
 
 Note that we set the following container environment variables with the flag `-e`:
@@ -62,21 +62,23 @@ Note that we set the following container environment variables with the flag `-e
 | KEY | Production key's key | No |
 | SECRET | Production key's secret | No |
 | NAME | @ | **Yes**, defaults to `@` |
+| DELAY | 1200 | **Yes**, defaults to `300` |
 
 You can also run the container interactively to test it with:
 ```bash
-sudo docker run --rm --name=godaddyddnsTEST -e 'DOMAIN=mydomain.com' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'NAME=@' godaddy-ip-ddns
+sudo docker run --rm --name=godaddyddnsTEST -e 'DOMAIN=mydomain.com' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'NAME=@' -e 'DELAY=1200' godaddy-ip-ddns
 ```
 
 ### Option 2 of 2: using the Shell script godaddyddns.sh
 
 1. Set the necessary variables:
-    - Option 1 of 2: Set environment variables:
+    - Option 1 of 2: Set environment variables with a terminal:
         ```bash
         DOMAIN=mydomain.com
         KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5
         SECRET=GuUFdVFj8nJ1M79RtdwmkZ
         NAME=@ # optional
+        DELAY=1200 # optional
         ```
     - Option 2 of 2: Set variables in the shell script *godaddyddns.sh*
         1. Copy the following block of code:
@@ -85,19 +87,20 @@ sudo docker run --rm --name=godaddyddnsTEST -e 'DOMAIN=mydomain.com' -e 'KEY=dLP
             KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5
             SECRET=GuUFdVFj8nJ1M79RtdwmkZ
             NAME=@ # optional
+            DELAY=1200 # optional
             ```
-        2. Paste it just after the first line `#!/bin/bash`
+        2. Paste it after the first line `#!/bin/bash`
 2. Make the script executable with:
     ```bash
     sudo chmod +x godaddyddns.sh
     ```
-3. Test the script by running it once with:
+3. Test the script by running it with:
     ```bash
     ./godaddyddns.sh
     ```
-    Check your IP address in the A record on GoDaddy has been updated successfully.
+    Refer to the [Testing](#Testing) section to see the result.
 
-4. Setup a Cron job so that the script is executed periodically. See [this](https://awc.com.my/uploadnew/5ffbd639c5e6eccea359cb1453a02bed_Setting%20Up%20Cron%20Job%20Using%20crontab.pdf) for more information.
+4. Run the shell script with [screen](https://www.gnu.org/software/screen/) for example or as a service.
 
 ## Testing
 
