@@ -2,8 +2,8 @@
 
 Update the IP address of your A record of your *GoDaddy* domain every 5 minutes.
 
-It relies on the GoDaddy API and only uses bash, making it small with low resource requirements.
-The image is **10MB** and requires **156KB** of RAM when idle and **2MB** of RAM at boot time.
+It uses bash and curl to communicate with the GoDaddy API, and is based on [Alpine](https://hub.docker.com/_/alpine/).
+The image is **10MB** and requires **6MB** of RAM.
 
 ## Installation
 
