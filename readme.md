@@ -47,11 +47,11 @@ In this example, the key is `dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5` and the secret
         2. With a terminal, go in the directory where the *Dockerfile* is located
         3. Build the image with:
             ```bash
-            sudo docker build -t godaddy-ip-ddns ./
+            sudo docker build -t qmcgaw/godaddy-ip-ddns ./
             ```
 3. Launching the Docker container from the image (replace the values below):
     ```bash
-    sudo docker run -d --name=godaddyddns --restart=always -e 'DOMAIN=mydomain.com' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'NAME=@' -e 'DELAY=1200' godaddy-ip-ddns
+    sudo docker run -d --name=godaddyddns --restart=always -e 'DOMAIN=mydomain.com' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'NAME=@' -e 'DELAY=1200' qmcgaw/godaddy-ip-ddns
     ```
 
 Note that we set the following container environment variables with the flag `-e`:
@@ -66,7 +66,7 @@ Note that we set the following container environment variables with the flag `-e
 
 You can also run the container interactively to test it with:
 ```bash
-sudo docker run --rm --name=godaddyddnsTEST -e 'DOMAIN=mydomain.com' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'NAME=@' -e 'DELAY=1200' godaddy-ip-ddns
+sudo docker run --rm --name=godaddyddnsTEST -e 'DOMAIN=mydomain.com' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'NAME=@' -e 'DELAY=1200' qmcgaw/godaddy-ip-ddns
 ```
 
 ### Option 2 of 2: using the Shell script godaddyddns.sh
