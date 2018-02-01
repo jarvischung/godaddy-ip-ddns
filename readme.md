@@ -104,7 +104,7 @@ sudo docker run --rm --name=godaddyddnsTEST -e 'DOMAIN=mydomain.com' -e 'KEY=dLP
 
 ## Testing
 
-With a browser, go to https://dcc.godaddy.com/manage/**yourdomain.com**/dns and check the **Value** of the record of type **A** is set to your [current IP address](https://www.whatismyip.com/)
+With a browser, go to https://dcc.godaddy.com/manage/yourdomain.com/dns (replace yourdomain.com) and check the **Value** of the record of type **A** is set to your [current IP address](https://www.whatismyip.com/)
 
 ![GoDaddy DNS management](readme/godaddydnsmanagement.png)
 
