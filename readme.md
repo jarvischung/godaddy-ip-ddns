@@ -35,6 +35,9 @@ In this example, the key is `dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5` and the secret
 2. Obtaining the Docker image
     - Option 1 of 2: Docker Hub Registry
         1. You can check my [Docker Hub page](https://hub.docker.com/r/qmcgaw/godaddy-ip-ddns/) for more information.
+            
+            [![Docker Hub page](readme/dockerhub.png)](https://hub.docker.com/r/qmcgaw/godaddy-ip-ddns/)
+        
         2. In a terminal, download the image (10MB) with:
             ```bash
             sudo docker pull qmcgaw/godaddy-ip-ddns
@@ -95,3 +98,11 @@ sudo docker run --rm --name=godaddyddnsTEST -e 'DOMAIN=mydomain.com' -e 'KEY=dLP
     Check your IP address in the A record on GoDaddy has been updated successfully.
 
 4. Setup a Cron job so that the script is executed periodically. See [this](https://awc.com.my/uploadnew/5ffbd639c5e6eccea359cb1453a02bed_Setting%20Up%20Cron%20Job%20Using%20crontab.pdf) for more information.
+
+## Testing
+
+With a browser, go to https://dcc.godaddy.com/manage/**yourdomain.com**/dns and check the **Value** of the record of type **A** is set to your [current IP address](https://www.whatismyip.com/)
+
+![GoDaddy DNS management](readme/godaddydnsmanagement.png)
+
+You might want to try to change the IP address to another one to see if the update actually occurs.
