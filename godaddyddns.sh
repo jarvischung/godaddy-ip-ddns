@@ -23,11 +23,8 @@ do
     for target in "${targets[@]}"
     do
         :
-        echo "1: $target"
         target="${target:1:${#target}-2}";
-        echo "2: $target"
         IFS=',' read -a target <<< "${target}"
-        echo "3: $target"
         domain="${target[0]}";
         type="${target[1]}";
         name="${target[2]}";
