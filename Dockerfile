@@ -1,19 +1,7 @@
 FROM alpine:latest
-
 MAINTAINER quentin.mcgaw@gmail.com
-
-RUN apk add --no-cache bash
-RUN apk add --no-cache curl
-
+RUN apk add --no-cache curl bash
 WORKDIR /usr/script
-
 COPY godaddyddns.sh ./
-
-ENV DOMAIN example.com
-ENV NAME www
-ENV KEY abcdef
-ENV SECRET qwerty
-
-RUN chmod 555 godaddyddns.sh
-
-CMD ./godaddyddns.sh
+RUN chmod +x godaddyddns.sh
+ENTRYPOINT ./godaddyddns.sh

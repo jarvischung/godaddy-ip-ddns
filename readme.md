@@ -39,65 +39,76 @@ In this example, the key is `dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5` and the secret
             [![Docker Hub page](readme/dockerhub.png)](https://hub.docker.com/r/qmcgaw/godaddy-ip-ddns/)
         
         2. In a terminal, download the image (10MB) with:
+
             ```bash
             sudo docker pull qmcgaw/godaddy-ip-ddns
             ```
+
     - Option 2 of 2: Build the image
         1. Download the repository files or `git clone` them
         2. With a terminal, go in the directory where the *Dockerfile* is located
         3. Build the image with:
+
             ```bash
             sudo docker build -t qmcgaw/godaddy-ip-ddns ./
             ```
-3. Launching the Docker container from the image (replace the values below):
+
+3. Launching the Docker container from the image (replace the environment variables below with your own values):
+
     ```bash
-    sudo docker run -d --name=godaddyddns --restart=always -e 'DOMAIN=mydomain.com' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'NAME=@' -e 'DELAY=1200' qmcgaw/godaddy-ip-ddns
+    sudo docker run -d --name=godaddyddns --restart=always -e 'TARGETS="[[mydomain.com,A,@];[mydmain2.com,A,*]]"' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'DELAY=1200' qmcgaw/godaddy-ip-ddns
     ```
 
 Note that we set the following container environment variables with the flag `-e`:
 
 | **Environement variable** | **Value** | *Optional* |
 | --- | --- | --- |
-| DOMAIN | Domain name | No |
+| TARGETS | Array containing `[`Domain name`,` Record type`,` Record name`]` | No |
 | KEY | Production key's key | No |
 | SECRET | Production key's secret | No |
-| NAME | @ | **Yes**, defaults to `@` |
-| DELAY | 1200 | **Yes**, defaults to `300` |
+| DELAY | `1200` | **Yes**, defaults to `300` |
 
 You can also run the container interactively to test it with:
+
 ```bash
-sudo docker run --rm --name=godaddyddnsTEST -e 'DOMAIN=mydomain.com' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'NAME=@' -e 'DELAY=1200' qmcgaw/godaddy-ip-ddns
+sudo docker run -it --rm --name=godaddyddnsTEST -e 'TARGETS="[[mydomain.com,A,@];[mydmain2.com,A,*]]"' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'DELAY=1200' qmcgaw/godaddy-ip-ddns
 ```
 
 ### Option 2 of 2: using the Shell script godaddyddns.sh
 
 1. Set the necessary variables:
     - Option 1 of 2: Set environment variables with a terminal:
-        ```bash
-        DOMAIN=mydomain.com
+    
+        ```shell
+        TARGETS="[[mydomain.com,A,@];[mydmain2.com,A,*]]"
         KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5
         SECRET=GuUFdVFj8nJ1M79RtdwmkZ
-        NAME=@ # optional
         DELAY=1200 # optional
         ```
+    
     - Option 2 of 2: Set variables in the shell script *godaddyddns.sh*
         1. Copy the following block of code:
+        
             ```shell
-            DOMAIN=mydomain.com
+            TARGETS="[[mydomain.com,A,@];[mydmain2.com,A,*]]"
             KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5
             SECRET=GuUFdVFj8nJ1M79RtdwmkZ
-            NAME=@ # optional
             DELAY=1200 # optional
             ```
-        2. Paste it after the first line `#!/bin/bash`
+        
+        2. Paste it after the first line `#!/bin/sh`
 2. Make the script executable with:
-    ```bash
+
+    ```shell
     sudo chmod +x godaddyddns.sh
     ```
+
 3. Test the script by running it with:
-    ```bash
+
+    ```shell
     ./godaddyddns.sh
     ```
+
     Refer to the [Testing](#Testing) section to see the result.
 
 4. Run the shell script with [screen](https://www.gnu.org/software/screen/) for example or as a service.
