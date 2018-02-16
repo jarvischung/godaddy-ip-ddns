@@ -1,6 +1,6 @@
 # GoDaddy DDNS Public IP updater
 
-Update the IP address of your A record of your *GoDaddy* domain every 5 minutes.
+Update the IP address of one or more of your records of one or more *GoDaddy* domain(s) every 5 minutes.
 
 It uses bash and curl to communicate with the GoDaddy API, and is based on [Alpine](https://hub.docker.com/_/alpine/).
 The image is **10MB** and requires **6MB** of RAM.
@@ -56,7 +56,7 @@ In this example, the key is `dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5` and the secret
 3. Launching the Docker container from the image (replace the environment variables below with your own values):
 
     ```bash
-    sudo docker run -d --name=godaddyddns --restart=always -e 'TARGETS="[[mydomain.com,A,@];[mydmain2.com,A,*]]"' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'DELAY=1200' qmcgaw/godaddy-ip-ddns
+    sudo docker run -d --name=godaddyddns --restart=always -e 'TARGETS=[[mydomain.com,A,@];[mydomain2.com,A,*]]' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'DELAY=1200' qmcgaw/godaddy-ip-ddns
     ```
 
 Note that we set the following container environment variables with the flag `-e`:
@@ -71,7 +71,7 @@ Note that we set the following container environment variables with the flag `-e
 You can also run the container interactively to test it with:
 
 ```bash
-sudo docker run -it --rm --name=godaddyddnsTEST -e 'TARGETS="[[mydomain.com,A,@];[mydmain2.com,A,*]]"' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'DELAY=1200' qmcgaw/godaddy-ip-ddns
+sudo docker run -it --rm --name=godaddyddnsTEST -e 'TARGETS=[[mydomain.com,A,@];[mydomain2.com,A,*]]' -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'DELAY=1200' qmcgaw/godaddy-ip-ddns
 ```
 
 ### Option 2 of 2: using the Shell script godaddyddns.sh
@@ -80,7 +80,7 @@ sudo docker run -it --rm --name=godaddyddnsTEST -e 'TARGETS="[[mydomain.com,A,@]
     - Option 1 of 2: Set environment variables with a terminal:
     
         ```shell
-        TARGETS="[[mydomain.com,A,@];[mydmain2.com,A,*]]"
+        TARGETS="[[mydomain.com,A,@];[mydomain2.com,A,*]]"
         KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5
         SECRET=GuUFdVFj8nJ1M79RtdwmkZ
         DELAY=1200 # optional
@@ -90,7 +90,7 @@ sudo docker run -it --rm --name=godaddyddnsTEST -e 'TARGETS="[[mydomain.com,A,@]
         1. Copy the following block of code:
         
             ```shell
-            TARGETS="[[mydomain.com,A,@];[mydmain2.com,A,*]]"
+            TARGETS="[[mydomain.com,A,@];[mydomain2.com,A,*]]"
             KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5
             SECRET=GuUFdVFj8nJ1M79RtdwmkZ
             DELAY=1200 # optional
