@@ -9,19 +9,19 @@ The image is **10MB** and requires **6MB** of RAM.
 
 ### GoDaddy credentials
 
-[![GoDaddy Website](readme/godaddy.png)](https://godaddy.com)
+[![GoDaddy Website](https://github.com/qdm12/godaddy-ip-ddns/raw/master/readme/godaddy.png)](https://godaddy.com)
 
 1. Login to [https://developer.godaddy.com/keys](https://developer.godaddy.com/keys/) with your account credentials.
 
-[![GoDaddy Developer Login](readme/login.gif)](https://developer.godaddy.com/keys)
+[![GoDaddy Developer Login](https://github.com/qdm12/godaddy-ip-ddns/raw/master/readme/login.gif)](https://developer.godaddy.com/keys)
 
 2. Generate a Test key and secret.
 
-[![GoDaddy Developer Test Key](readme/testkey.gif)](https://developer.godaddy.com/keys)
+[![GoDaddy Developer Test Key](https://github.com/qdm12/godaddy-ip-ddns/raw/master/readme/testkey.gif)](https://developer.godaddy.com/keys)
 
 3. Generate a **Production** key and secret.
 
-[![GoDaddy Developer Production Key](readme/productionkey.gif)](https://developer.godaddy.com/keys)
+[![GoDaddy Developer Production Key](https://github.com/qdm12/godaddy-ip-ddns/raw/master/readme/productionkey.gif)](https://developer.godaddy.com/keys)
 
 Obtain the **key** and **secret** of that production key.
 
@@ -29,7 +29,7 @@ In this example, the key is `dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5` and the secret
 
 ### Option 1 of 2: Docker container
 
-[![Docker container](readme/docker.png)](https://www.docker.com/)
+[![Docker container](https://github.com/qdm12/godaddy-ip-ddns/raw/master/readme/docker.png)](https://www.docker.com/)
 
 1. Make sure you have [Docker](https://docs.docker.com/install/) installed
 2. Obtaining the Docker image
@@ -107,6 +107,6 @@ sudo docker run -it --rm --name=godaddyddnsTEST -e 'TARGETS=[[mydomain.com,A,@];
 
 With a browser, go to https://dcc.godaddy.com/manage/yourdomain.com/dns (replace yourdomain.com) and check the **Value** of the record of type **A** is set to your [current IP address](https://www.whatismyip.com/)
 
-[![GoDaddy DNS management](readme/godaddydnsmanagement.png)](https://dcc.godaddy.com/manage/)
+[![GoDaddy DNS management](https://github.com/qdm12/godaddy-ip-ddns/raw/master/readme/godaddydnsmanagement.png)](https://dcc.godaddy.com/manage/)
 
 You might want to try to change the IP address to another one to see if the update actually occurs.
