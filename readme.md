@@ -47,9 +47,9 @@ In this example, the key is `dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5` and the secret
 
     ```bash
     sudo docker run -d --name=godaddyddns --restart=always \
-    -e 'TARGETS=[[mydomain.com,A,@];[mydomain2.com,A,*]]' \
-    -e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' \
-    -e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'DELAY=1200' \
+    -e TARGETS=[[mydomain.com,A,@];[mydomain2.com,A,*]] \
+    -e KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5 \
+    -e SECRET=GuUFdVFj8nJ1M79RtdwmkZ -e DELAY=1200 \
     qmcgaw/godaddy-ip-ddns
     ```
 
@@ -66,9 +66,9 @@ You can also run the container interactively to test it with:
 
 ```bash
 sudo docker run -it --rm --name=godaddyddnsTEST \
--e 'TARGETS=[[mydomain.com,A,@];[mydomain2.com,A,*]]' \
--e 'KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5' \
--e 'SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e 'DELAY=1200' \
+-e TARGETS=[[mydomain.com,A,@];[mydomain2.com,A,*]] \
+-e KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5 \
+-e SECRET=GuUFdVFj8nJ1M79RtdwmkZ' -e DELAY=1200 \
 qmcgaw/godaddy-ip-ddns
 ```
 
