@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ ! "${TARGETS}" =~ ^\[\[[A-Za-z0-9\._\-][A-Za-z0-9\._\-]*\.[[:alpha:]]{2,5}\,(NS|A|CNAME|MX|TXT|SRV|AAAA|CAA)\,(@|\*|www|_domainconnect)\](\;\[[A-Za-z0-9\._\-][A-Za-z0-9\._\-]*\.[[:alpha:]]{2,5}\,(NS|A|CNAME|MX|TXT|SRV|AAAA|CAA)\,(@|\*|www|_domainconnect)\])*\]$ ]]; then
+if [[ ! "${TARGETS}" =~ ^\[\[[A-Za-z0-9\._\-][A-Za-z0-9\._\-]*\.[[:alpha:]]{2,7}\,(NS|A|CNAME|MX|TXT|SRV|AAAA|CAA)\,(@|\*|www|_domainconnect)\](\;\[[A-Za-z0-9\._\-][A-Za-z0-9\._\-]*\.[[:alpha:]]{2,7}\,(NS|A|CNAME|MX|TXT|SRV|AAAA|CAA)\,(@|\*|www|_domainconnect)\])*\]$ ]]; then
     >&2 echo "The environment variable TARGETS is missing or malformed. Exiting...";
     exit 1;
 fi
