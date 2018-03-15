@@ -1,5 +1,7 @@
 # GoDaddy DDNS Public IP updater
 
+[![Build Status](https://travis-ci.org/qdm12/godaddy-ip-ddns.svg?branch=master)](https://travis-ci.org/qdm12/godaddy-ip-ddns)
+
 Update the IP address of one or more of your records of one or more *GoDaddy* domain(s) every 5 minutes.
 
 It uses bash and curl to communicate with the GoDaddy API, and is based on [Alpine](https://hub.docker.com/_/alpine/).
