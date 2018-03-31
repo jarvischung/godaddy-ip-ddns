@@ -1,0 +1,12 @@
+version: '3'
+services:
+    godaddy:
+        image: qmcgaw/godaddy-ip-ddns
+        container_name: godaddy
+        environment:
+            - TARGETS=[[mydomain.com,A,@];[mydomain2.com,A,*]]
+            - KEY=dLP4WKz5PdkS_GuUDNigHcLQFpw4CWNwAQ5
+            - SECRET=GuUFdVFj8nJ1M79RtdwmkZ
+            - DELAY=1200
+        network_mode: bridge
+        restart: always
