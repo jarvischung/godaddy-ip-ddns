@@ -4,10 +4,12 @@
 
 Update the IP address of one or more of your records of one or more *GoDaddy* domain(s) every 5 minutes.
 
-[![](https://images.microbadger.com/badges/image/qmcgaw/godaddy-ip-ddns.svg)](https://microbadger.com/images/qmcgaw/godaddy-ip-ddns "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/qmcgaw/godaddy-ip-ddns.svg)](https://microbadger.com/images/qmcgaw/godaddy-ip-ddns "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/qmcgaw/godaddy-ip-ddns.svg)](https://microbadger.com/images/qmcgaw/godaddy-ip-ddns)
+[![](https://images.microbadger.com/badges/version/qmcgaw/godaddy-ip-ddns.svg)](https://microbadger.com/images/qmcgaw/godaddy-ip-ddns)
 
-The image is **10MB** and requires **6MB** of RAM.
+| Download size | Image size | RAM usage | CPU usage |
+| --- | --- | --- | --- |
+| ?MB | 9.59MB | 6.64MB | Very low |
 
 Based on:
 - Bash
