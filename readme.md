@@ -1,8 +1,17 @@
 # GoDaddy DDNS Public IP updater
 
-[![Build Status](https://travis-ci.org/qdm12/godaddy-ip-ddns.svg?branch=master)](https://travis-ci.org/qdm12/godaddy-ip-ddns)
-
 Update the IP address of one or more of your records of one or more *GoDaddy* domain(s) every 5 minutes.
+
+[![Build Status](https://travis-ci.org/qdm12/godaddy-ip-ddns.svg?branch=master)](https://travis-ci.org/qdm12/godaddy-ip-ddns)
+[![Docker Build Status](https://img.shields.io/docker/build/qmcgaw/godaddy-ip-ddns.svg)](https://hub.docker.com/r/qmcgaw/godaddy-ip-ddns)
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/qdm12/godaddy-ip-ddns.svg)](https://github.com/qdm12/godaddy-ip-ddns/issues)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/y/qdm12/godaddy-ip-ddns.svg)](https://github.com/qdm12/godaddy-ip-ddns/issues)
+[![GitHub issues](https://img.shields.io/github/issues/qdm12/godaddy-ip-ddns.svg)](https://github.com/qdm12/godaddy-ip-ddns/issues)
+
+[![Docker Pulls](https://img.shields.io/docker/pulls/qmcgaw/godaddy-ip-ddns.svg)](https://hub.docker.com/r/qmcgaw/godaddy-ip-ddns)
+[![Docker Stars](https://img.shields.io/docker/stars/qmcgaw/godaddy-ip-ddns.svg)](https://hub.docker.com/r/qmcgaw/godaddy-ip-ddns)
+[![Docker Automated](https://img.shields.io/docker/automated/qmcgaw/godaddy-ip-ddns.svg)](https://hub.docker.com/r/qmcgaw/godaddy-ip-ddns)
 
 [![](https://images.microbadger.com/badges/image/qmcgaw/godaddy-ip-ddns.svg)](https://microbadger.com/images/qmcgaw/godaddy-ip-ddns)
 [![](https://images.microbadger.com/badges/version/qmcgaw/godaddy-ip-ddns.svg)](https://microbadger.com/images/qmcgaw/godaddy-ip-ddns)

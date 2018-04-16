@@ -14,8 +14,7 @@ if [[ ! "${SECRET}" =~ ^[A-Za-z0-9]{22}$ ]]; then
     exit 1;
 fi
 if [[ ! "${DELAY}" =~ ^[0-9][0-9]*$ ]]; then
-    echo "DELAY is missing or is malformed: setting it to 300 seconds"
-    DELAY=300
+    echo "DELAY is missing or is malformed: defaults to 300 seconds"
 fi
 targets="${TARGETS:1:${#TARGETS}-2}";
 IFS=';' read -a targets <<< "${targets}"
