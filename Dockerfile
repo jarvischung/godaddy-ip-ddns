@@ -9,7 +9,7 @@ LABEL maintainer="quentin.mcgaw@gmail.com" \
 COPY entrypoint.sh /
 RUN apk add -q --progress --update --no-cache curl bash ca-certificates && \
     rm -rf /var/cache/apk/* && \
-    chmod +x /entrypoint
+    chmod +x /entrypoint.sh
 ENV TARGETS= \
     KEY= \
     SECRET= \
