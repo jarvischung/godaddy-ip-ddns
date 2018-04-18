@@ -18,12 +18,13 @@ Update the IP address of one or more of your records of one or more *GoDaddy* do
 
 | Download size | Image size | RAM usage | CPU usage |
 | --- | --- | --- | --- |
-| ?MB | 9.59MB | 6.64MB | Very low |
+| 3.9MB | 9.61MB | 6.64MB | Very low |
 
 Based on:
+- [Alpine Linux](https://hub.docker.com/_/alpine/)
 - Bash
 - Curl
-- [Alpine Linux](https://hub.docker.com/_/alpine/).
+- Ca-Certificates
 
 ## Installation
 

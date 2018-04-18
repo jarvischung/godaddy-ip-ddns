@@ -6,8 +6,10 @@ LABEL maintainer="quentin.mcgaw@gmail.com" \
       ram="6MB" \
       cpu_usage="Very low" \
       github="https://github.com/qdm12/godaddy-ip-ddns"
+COPY entrypoint.sh /
 RUN apk add -q --progress --update --no-cache curl bash ca-certificates && \
-    rm -rf /var/cache/apk/*
+    rm -rf /var/cache/apk/* && \
+    chmod +x /entrypoint
 ENV TARGETS= \
     KEY= \
     SECRET= \
@@ -19,5 +21,4 @@ HEALTHCHECK --interval=7m --timeout=5s --start-period=7s --retries=3 \
                   || \
                   exit 1 \
                 ]
-COPY entrypoint.sh /
 ENTRYPOINT /entrypoint.sh
