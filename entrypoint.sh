@@ -36,7 +36,7 @@ do
         if [ "$ip" != "$godaddyip" ];
          then
             echo "Updating $domain/records/$type/$name to new IP address $ip ..."
-            result=$(curl -i -s -X PUT -H "Authorization: sso-key $KEY:$SECRET" -H "Content-Type: application/json" -d '{"data":"'$ip'","ttl":600}' "https://api.godaddy.com/v1/domains/$domain/records/$type/$name")
+            result=$(curl -i -s -X PUT -H "Authorization: sso-key $KEY:$SECRET" -H "Content-Type: application/json" -d '[{"data":"'$ip'","ttl":600}]' "https://api.godaddy.com/v1/domains/$domain/records/$type/$name")
             echo "$result"
         fi
     done
